@@ -9,6 +9,7 @@ body {
   place-content: center;
   height: 100vh;
   width: 100vw;
+  font-family: "Poppins", sans-serif;
   background-color: lightgrey;
 }
 .grid {
@@ -22,30 +23,19 @@ body {
   overflow: hidden;
 }
 .yay {
+  opacity: 0;
   position: absolute;
-  width: 50px;
+  width: 70px;
   height: 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 100px);
-  transition: all 1s;
-  opacity: 0;
+  z-index: 1;
 }
 .done .yay {
   opacity: 1;
   transform: translate(-50%, -50px);
-  z-index: 1;
-}
-.cover {
-  position: absolute;
-}
-
-.done .cover {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.5;
-  transition: 1s;
+  transition: all 1s;
 }
 a {
   opacity: 0;
@@ -55,7 +45,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 100px);
-  z-index: 77;
+  z-index: 77;   
   background-color: white;
   color: black;
   border-radius: 20px;
@@ -69,6 +59,17 @@ a {
   opacity: 1;
   transition: 1s all 1s;
   transform: translate(-50%, 25%);
+}
+
+.cover {
+  position: absolute;
+}
+.done .cover {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: black;
+  transition: all 0.5s;
 }
 
 div[class^="img"] {
@@ -95,10 +96,18 @@ img {
   background-color: black;
   /* z-index: 2; */
 }
+#score {
+  color: green;
+}
+#failed {
+  color: red;
+}
 
 @media (max-width: 960px) {
   .grid {
+
     height: 200px;
     width: 300px;
+
   }
 }
